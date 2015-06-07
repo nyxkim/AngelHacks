@@ -1,0 +1,135 @@
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+  <title>Checkup</title>
+</head>
+
+<body>
+</body>
+
+<template name="layout">
+			<div id="content">
+				<div class="inner">
+
+					<!-- Post -->
+						<article class="box post post-excerpt">
+							{{#if currentUser}}
+								{{ currentUser.email }}
+							{{else}}
+								{{#linkTo route='login'}}Login{{/linkTo}}
+							{{/if}}
+							{{> yield}}
+						</article>
+				</div>
+			</div>
+
+		<!-- Sidebar -->
+			<div id="sidebar">
+
+				<!-- Logo -->
+					<a href="/" class="image featured"><img src="images/checkUp_logo.jpg" alt="" /></a>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current">
+								<a href="/">Home</a>
+						 </li>
+							<li><a href="/contact">Contact Us</a></li>
+							<li>
+								<a href="/register">Register</a></li>
+						</ul>
+					</nav>
+				<!-- Text -->
+					<section class="box text-style1">
+						<div class="inner">
+							<p>
+								Please search for your loved one by CheckUp ID in the box above.
+							</p>
+						</div>
+					</section>
+
+				<!-- Recent Posts -->
+					<section class="box recent-posts">
+						<header>
+							<h2>Useful Links</h2>
+						</header>
+						<ul>
+							<li><a href="http://www.webmd.com/epilepsy/electroencephalogram-eeg-21508">Information about EEG</a></li>
+							<li><a href="http://www.webmd.com/heart-disease/guide/electrocardiogram-specialized-ekgs">Information about EKG</a></li>
+							<li><a href="http://www.webmd.com/brain/electromyogram-emg-and-nerve-conduction-studies">Information about EMG</a></li>
+						</ul>
+					</section>
+				
+				<!--  Sponsors -->
+					<section class="box recent-comments">
+						<header>
+							<h2>Powered By:</h2>
+						</header>
+						<ul>
+							<li><a href="https://console.ng.bluemix.net/">IBM BlueMix</a></li>
+							<li><a href="http://www.openbci.com/">OpenBCI</a></li>
+							<li><a href="#">TPS</a></li>
+						</ul>
+					</section>
+
+			</div>
+</template>
+
+<template name="index">
+								<header>
+								<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+								<h2><a href="#">Welcome to CheckUp</a></h2>
+								<p>This site will help you CheckUp on loved ones from afar.</p>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<p><strong>Hello!</strong> You've reached the CheckUp page, on which you can easily CheckUp on the health stats of loved ones from afar.</p>
+</template>
+
+<template name="login">
+	<h2>Login</h2>
+	<form id="login-form">
+		<label for="email">Email</label>
+		<input type="email" id="login-email" />
+
+		<label for="password">Password</label>
+		<input type="password" id="login-password" />
+
+		<button type="submit">Login!</button>
+	</form>
+</template>
+
+<template name="register">
+	<h2>Registration</h2>
+	<form id="register-form">
+		<label for="email">Email</label>
+		<input type="email" id="register-email" />
+		<label for="password">Password</label>
+		<input type="password" id="register-password" />
+		<button type="submit">Register!</button>
+	</form>
+</template>
+
+<template name="dashboard">
+
+	<h1>Monitoring</h1>
+
+	<h2>EKG and skin conductance</h2>
+	<img src="/images/checkUpTPS.gif" alt=""/>
+
+	<br />
+	<br />
+
+	<h2>EEG</h2>
+	<img src="/images/checkUpOpenBCI.gif" />
+</template>
+
+<template name="notFound">NotFound</template>
+
+<template name="contact"></template>

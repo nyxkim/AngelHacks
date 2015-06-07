@@ -1,0 +1,12 @@
+---
+applications:
+- memory: 512M
+  domain: checkup.mybluemix.net
+  path: .
+  buildpack: https://github.com/bancha001/bluemix-buildpack-meteor
+  host: checkup.mybluemix.net
+  name: checkup
+  disk: 512M
+  services:
+    - MongoLab-4d
+  instances: 1
